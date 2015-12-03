@@ -53,6 +53,15 @@
   <script src="scripts/controllers/product.js"></script>
   <script src="scripts/controllers/cart.js"></script>
   <script src="scripts/controllers/header.js"></script>
+  <script>
+    $(function(){
+      $(document).on('click','.navbar-collapse.in',function(e) {
+          if( $(e.target).is('a') && ( $(e.target).attr('class') != 'dropdown-toggle' ) ) {
+              $(this).collapse('hide');
+          }
+      });
+    });
+  </script>
   <!-- endbuild -->
 </body>
 

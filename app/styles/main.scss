@@ -68,7 +68,7 @@ body {
 }
 
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+@media(min-width: $screen-sm-min) {
   .container {
     max-width: 730px;
   }
@@ -88,6 +88,11 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
+
+  .navbar.transparent.navbar-inverse {
+      background-color: transparent;
+      border-color: transparent;
+  }
 }
 
 .navbar-brand > img {
@@ -101,10 +106,6 @@ body {
 	transition: .3s ease-in-out;
 }
 
-.navbar.transparent.navbar-inverse {
-    background-color: rgba(0,0,0,0);
-    border-color: rgba(0,0,0,0);
-}
 .navbar.transparent.navbar-inverse:hover .navbar-brand > img{
   -webkit-filter: grayscale(0);
   -webkit-transform: scale(1.8) rotate(-5deg);
