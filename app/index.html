@@ -62,6 +62,11 @@
               $(this).collapse('hide');
           }
       });
+      $(document).on('click','.btn.btn-primary',function(e) {
+        $(this).removeClass('btn-primary');
+        $(this).addClass('btn-success');
+        $(this).html('Uppfattat!<span class="glyphicon glyphicon-ok"></span>') // button text will be "finished!"
+      })
     });
   </script>
   <!-- endbuild -->
