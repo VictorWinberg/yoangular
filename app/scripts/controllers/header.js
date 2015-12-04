@@ -18,7 +18,8 @@ angular.module('yoangularApp')
       [
         {title: 'Nyheter', href: 'nyheter'},
         {title: 'Kalender', href: 'kalender'},
-        {title: 'Eventanmälan', href: 'eventanmälan'}
+        {title: 'Eventanmälan', href: 'eventanmälan'},
+        {title: 'Experiment', href: 'experiment'}
       ]},
       {title: 'Community', items:
       [

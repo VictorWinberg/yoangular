@@ -49,6 +49,11 @@ angular
         controller: 'CartCtrl',
         controllerAs: 'cart'
       })
+      .when('/experiment', {
+        templateUrl: 'views/experiment.html',
+        controller: 'ExperimentCtrl',
+        controllerAs: 'experiment'
+      })
       .otherwise({
         redirectTo: '/'
       });
