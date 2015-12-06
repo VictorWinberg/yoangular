@@ -16,7 +16,7 @@
   <!-- endbuild -->
 </head>
 
-<body ng-app="yoangularApp">
+<body ng-app="yoangularApp" script>
   <div ng-include="'views/header.html'"></div>
 
   <div class="container">
@@ -57,18 +57,10 @@
   <script src="scripts/directives/parallax.js"></script>
   <script>
     $(function(){
-      $(document).on('click','.navbar-collapse.in',function(e) {
-          if( $(e.target).is('a') && ( $(e.target).attr('class') != 'dropdown-toggle' ) ) {
-              $(this).collapse('hide');
-          }
-      });
-      $(document).on('click','.btn.btn-primary',function(e) {
-        $(this).removeClass('btn-primary');
-        $(this).addClass('btn-success');
-        $(this).html('Uppfattat!<span class="glyphicon glyphicon-ok"></span>') // button text will be "finished!"
-      })
+
     });
   </script>
+  <script src="scripts/directives/script.js"></script>
   <!-- endbuild -->
 </body>
 
