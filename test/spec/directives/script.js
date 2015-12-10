@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: parallax', function () {
+describe('Directive: script', function () {
 
   // load the directive's module
   beforeEach(module('yoangularApp'));
@@ -13,8 +13,8 @@ describe('Directive: parallax', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<parallax></parallax>');
+    element = angular.element('<script></script>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the parallax directive');
+    expect(element.text()).toBe('this is the script directive');
   }));
 });
