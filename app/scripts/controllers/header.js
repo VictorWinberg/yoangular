@@ -23,10 +23,7 @@ angular.module('yoangularApp')
       ]},
       {title: 'Community', items:
       [
-        {title: 'Anslut', href: 'anslut'}
-      ]},
-      {title: 'För funktionärer', items:
-      [
+        {title: 'Anslut', href: 'anslut'},
         {title: 'STAB16', href: 'stab16'}
       ]},
       {title: 'Sektionen', items:
@@ -36,7 +33,6 @@ angular.module('yoangularApp')
         {title: 'Swagtest', href: 'swagtest'},
         {title: 'Store', href: 'store'}
       ]},
-      {title: 'För företag', href: 'foretag'},
-      {title: 'About', href: 'about'}
+      {title: 'För företag', href: 'foretag'}
     ];
   });

@@ -8,10 +8,6 @@
  * Controller of the yoangularApp
  */
 angular.module('yoangularApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope, lorem) {
+    $scope.items = lorem.items();
   });
