@@ -18,13 +18,17 @@ angular.module('yoangularApp')
     },
     link: function($scope, elem, attrs) {
       elem.css({
-        'background-attachment': 'scroll',
-        'background-size': 'cover',
+        'background-attachment': 'fixed',
+        // Removed because of zoom in issues
+        //'background-size': 'cover',
         'background-position': '50% 0',
-        'background-repeat': 'no-repeat',
+        'background-repeat': 'repeat',
         'min-height': attrs.parallaxHeight,
+        'margin': '0 auto',
+        'position': 'relative',
         'background-image': 'url(' + attrs.parallaxSrc + ')'
       });
+
       var setPosition = function () {
         var calcValY = (elem.prop('offsetTop') - $window.pageYOffset) * ($scope.parallaxRatio ? $scope.parallaxRatio : 1.1) - ($scope.parallaxVerticalOffset || 0);
         // horizontal positioning
