@@ -10,33 +10,6 @@ angular.module('yoangularApp')
 .directive('parallax', ['$window', function($window) {
   return {
     restrict: 'A',
-    scope: {
-      parallaxRatio: '@',
-      parallaxVerticalOffset: '@',
-      parallaxHorizontalOffset: '@',
-    },
-    link: function($scope, elem, attrs) {
-      var setPosition = function () {
-        if(!$scope.parallaxHorizontalOffset) {
-          $scope.parallaxHorizontalOffset = '0';
-        }
-        var calcValY = $window.pageYOffset * ($scope.parallaxRatio ? $scope.parallaxRatio : 1.1 );
-        if (calcValY <= $window.innerHeight) {
-          var topVal = (calcValY < $scope.parallaxVerticalOffset ? $scope.parallaxVerticalOffset : calcValY);
-          var hozVal = ($scope.parallaxHorizontalOffset.indexOf("%") === -1 ? $scope.parallaxHorizontalOffset + 'px' : $scope.parallaxHorizontalOffset);
-          elem.css('transform', 'translate(' + hozVal + ', ' + topVal + 'px)');
-        }
-      };
-
-      setPosition();
-
-      angular.element($window).bind("scroll", setPosition);
-      angular.element($window).bind("touchmove", setPosition);
-    }  // link function
-  };
-}]).directive('parallaxBackground', ['$window', function($window) {
-  return {
-    restrict: 'A',
     transclude: true,
     template: '<div ng-transclude></div>',
     scope: {
@@ -44,6 +17,15 @@ angular.module('yoangularApp')
       parallaxVerticalOffset: '@'
     },
     link: function($scope, elem, attrs) {
+      elem.css({
+        'background-attachment': 'fixed',
+        'background-size': 'cover',
+        'background-position': '50% 0',
+        'background-repeat': 'no-repeat',
+        'height': '450px',
+        'position': 'relative',
+        'background-image': 'url(' + attrs.parallaxSrc + ')'
+      });
       var setPosition = function () {
         var calcValY = (elem.prop('offsetTop') - $window.pageYOffset) * ($scope.parallaxRatio ? $scope.parallaxRatio : 1.1) - ($scope.parallaxVerticalOffset || 0);
         // horizontal positioning
