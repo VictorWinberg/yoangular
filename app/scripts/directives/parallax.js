@@ -18,12 +18,11 @@ angular.module('yoangularApp')
     },
     link: function($scope, elem, attrs) {
       elem.css({
-        'background-attachment': 'fixed',
+        'background-attachment': 'scroll',
         'background-size': 'cover',
         'background-position': '50% 0',
         'background-repeat': 'no-repeat',
-        'height': '450px',
-        'position': 'relative',
+        'min-height': attrs.parallaxHeight,
         'background-image': 'url(' + attrs.parallaxSrc + ')'
       });
       var setPosition = function () {
